@@ -1,9 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+
+
+
+
 
 function App() {
+  const [count, setCount] = React.useState(0)
+
+  const handleClick = () =>{
+    setCount(count + 1)
+  }
+  
+  const Button = () => {
+    return( 
+      <button
+        onClick={handleClick}    
+      >
+        
+       Clicked  {count} times
+     </button>
+   )
+  }
+  
+  
+  
+  
+
+
   return (
     <div className="App">
+
+
+      <Button> asd</Button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
