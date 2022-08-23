@@ -8,7 +8,7 @@ import React from 'react';
 
 function App() {
   const [count, setCount] = React.useState(
-    () => window.localStorage.getItem("name")
+    () => window.localStorage.getItem("countClicks")
   )
 
   React.useEffect(
