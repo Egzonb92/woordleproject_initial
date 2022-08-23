@@ -8,7 +8,7 @@ import React from 'react';
 
 function App() {
   const [count, setCount] = React.useState(
-    () => window.localStorage.getItem("countClicks")
+    () => Number(window.localStorage.getItem("countClicks"))
   )
 
   React.useEffect(
@@ -20,10 +20,10 @@ function App() {
   )
 
   const handleClick = () =>{
-    setCount(count + 1)
+    setCount(Number(count + 1))
   }
   
-  const Button = () => {
+  const Button = (props) => {
     return( 
       <button
         onClick={handleClick}    
@@ -35,30 +35,9 @@ function App() {
   }
   
   
-  
-  
-
-
   return (
     <div className="App">
-
-
-      <Button> asd</Button>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Dette er min test.
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button/>
     </div>
   );
 }
