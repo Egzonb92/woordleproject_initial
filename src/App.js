@@ -7,7 +7,17 @@ import React from 'react';
 
 
 function App() {
-  const [count, setCount] = React.useState(0)
+  const [count, setCount] = React.useState(
+    () => window.localStorage.getItem("name")
+  )
+
+  React.useEffect(
+    () => {
+      window.localStorage.setItem("countClicks", count)
+      console.log("saving locally")
+    },
+    [count]
+  )
 
   const handleClick = () =>{
     setCount(count + 1)
